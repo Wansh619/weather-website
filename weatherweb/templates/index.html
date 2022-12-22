@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0%;
+        background-color: bisque;
+    }
+    form {
+        background-color: rgb(7, 185, 255);
+        padding: 10px;
+        border-radius: 10px;
+        text-align: right;
+        
+        
+    }
+    h1{
+        text-align: center;
+        background-color:darkblue;
+        color: darkseagreen; 
+        margin: 0%;
+        padding: 30px;
+    }
+    .city
+    {
+        width: 90%;
+        padding: 6px 10px;
+        
+        border-radius: 10px;
+        font-size: large;
+        margin: 0%;
+    }
+    .Submit
+    {
+        border-radius: 10px;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .Submit:hover
+    {
+        background-color: goldenrod;
+        color: white;
+        
+    }
+    
+    ul{
+        border: 5px solid black;
+    }
+    ul{
+        border: 5px solid black;
+        box-sizing: border-box;
+        background-color: skyblue;
+        width: 15%;
+        padding: 20px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        margin-left: 40%;
+    }
+    li{
+        text-decoration: none;
+        padding: 2px;
+        color: white;
+    }
+    .weather{
+        margin-top: 10%;
+    }
+</style>
+<body>
+     
+        <h1>Weather Today</h1>
+   
+    <form action="pred" method="POST">
+        {% csrf_token %}
+        <input type="search" class="city" name="city"> <input type="Submit" class="Submit">
+    </form>
+    {% for message in messages %}
+    <center><h2>{{message}}</h2> </center>
+    {% endfor %}
+
+    <div class="weather">
+        
+            <ul>
+                <li>
+                  <h3><b> Country  :</b></h3>    {{country}}
+                </li>
+                <br>
+                <li>
+                   <h3><b> City  :</b></h3>  {{City}}
+                </li>
+                <br>
+                <li>
+                   <h3><b>humidity  :</b></h3>    {{humidity}}
+                </li>
+                <br>
+                <li>
+                    <h3><b>Temprature  :</b></h3>    {{Temprature}}
+                </li>
+                <br>
+            </ul>
+        
+            
+    
+
+
+    </div>
+</body>
+</html>
